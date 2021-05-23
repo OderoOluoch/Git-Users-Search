@@ -1,6 +1,6 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/res/data.service';
+import {User} from '../../class/user';
 
 @Component({
   selector: 'app-profile',
@@ -9,12 +9,14 @@ import { DataService } from 'src/app/res/data.service';
 })
 export class ProfileComponent implements OnInit {
 
+  profile:any={}
+
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
     this.dataService.getMyUserDetails()
       .subscribe((response: any) => {
-        console.log(response)
+        this.profile = response
       })
   }
 

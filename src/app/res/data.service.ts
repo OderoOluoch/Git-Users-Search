@@ -11,6 +11,6 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   getMyUserDetails(){
-    return this.http.get(`https://api.github.com/users/OderoOluoch?access_token=${environment.apiKey}`)
+    return this.http.get(`https://api.github.com/users/OderoOluoch`)
   }
 }
