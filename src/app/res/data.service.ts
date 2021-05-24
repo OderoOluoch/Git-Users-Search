@@ -35,7 +35,7 @@ export class DataService {
 
   searchForAUser(userName:string){
     return this.http.get(
-      `https://api.github.com/search/users?q={${userName}}`
+      `https://api.github.com/search/users?q=${userName}`
     );
   }
 
