@@ -1,10 +1,9 @@
-<br />
-<br />
+
 <!-- <div class="search">
     <h4>Search for a specific Repo by Repo name  yeah</h4>
     <input type="text" placeholder="Search for GIFS" #user (keyup.enter)="search(user.value)">
 </div> -->
-<app-search-users></app-search-users>
+
 <br />
 <br />
 <div class="user-List">
@@ -12,7 +11,20 @@
     <p class="text-center">
         We have a pre defined list, you can view before you make your search
     </p>
-    <ul>
-        <li *ngFor="let user of users">{{user.login}}</li>
-    </ul>
+    <br />
+<br />
+    <app-search-users></app-search-users>
+    <br />
+<br />
+    <div  class="row">
+        <div *ngFor="let user of users" class="col-md-4 text-center">
+            <div class="profile">
+                <img [src]="user.avatar_url" alt="">
+                <blockquote>
+                    THis will be replaced with something very very soon, you think am JOking?
+                </blockquote>
+                <h3>{{user.login}}<span>We will find a use for you</span></h3>
+            </div>
+        </div>
+    </div>
 </div>
