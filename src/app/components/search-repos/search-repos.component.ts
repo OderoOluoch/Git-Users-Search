@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/res/data.service';
 
 @Component({
   selector: 'app-search-repos',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchReposComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+  }
+
+  searchRepos(searchTerm:string){
+    if(searchTerm !== ''){
+      this.dataService.searchForARepo(searchTerm);
+   }
   }
 
 }

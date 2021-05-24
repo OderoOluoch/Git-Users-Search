@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 
 export class DataService {
-  respos = new BehaviorSubject<any>([])
+  
   constructor(private http: HttpClient) {}
 
   //My profile End Points
@@ -53,11 +53,13 @@ export class DataService {
 
 
   //Repo End Points
+  respos = new BehaviorSubject<any>([])
   getUsersRepos(){
     return this.http.get(
       `https://api.github.com/search/repositories?q={query}`
     ).subscribe((response:any) =>{
-      this.respos.next(response.data);
+      console.log("FRom Get Users REpo", response.items)
+      this.respos.next(response.items);
     });
   }
 

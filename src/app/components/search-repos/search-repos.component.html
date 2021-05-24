@@ -1,1 +1,2 @@
-<input type="text"  name="search"  class="form-control" placeholder="Press Enter after filling in a repo name">
+<input type="text"  name="search"  class="form-control"  #repo (keyup.enter)="searchRepos(repo.value)"  placeholder="Press Enter to after filling in a repository username ">
+
