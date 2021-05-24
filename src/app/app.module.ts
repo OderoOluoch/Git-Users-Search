@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { UsersComponent } from './components/users/users.component';
 import { ReposComponent } from './components/repos/repos.component';
 import { UsersreposComponent } from './components/usersrepos/usersrepos.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UsersreposComponent } from './components/usersrepos/usersrepos.componen
     ProfileComponent,
     UsersComponent,
     ReposComponent,
-    UsersreposComponent
+    UsersreposComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

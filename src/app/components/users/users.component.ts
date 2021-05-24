@@ -10,14 +10,25 @@ import { DataService } from 'src/app/res/data.service';
 export class UsersComponent implements OnInit {
 
   users:any = []
+  userSearchResult ={}
 
   constructor(private dataService:DataService) { }
+
+
+  search(searchTerm:string){
+    if(searchTerm !== ''){
+       this.dataService.searchForAUser(searchTerm)
+        .subscribe((response:any)=>{
+        this.userSearchResult = response;
+        console.log("Logging from User form",response)
+       })       
+    }
+  }
 
   ngOnInit(): void {
     this.dataService.getGitUsers()
       .subscribe((response: any) => {
         this.users = response
-        console.log(response)
       })
   }
 
