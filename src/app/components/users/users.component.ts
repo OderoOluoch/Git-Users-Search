@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataService } from 'src/app/res/data.service';
 
 
@@ -7,29 +8,25 @@ import { DataService } from 'src/app/res/data.service';
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
-export class UsersComponent implements OnInit {
+export class UsersComponent implements OnInit, OnDestroy {
 
-  users:any = []
-  userSearchResult ={}
+  users:any = [];
+  subscription: Subscription;
+  
 
   constructor(private dataService:DataService) { }
 
 
-  search(searchTerm:string){
-    if(searchTerm !== ''){
-       this.dataService.searchForAUser(searchTerm)
-        .subscribe((response:any)=>{
-        this.userSearchResult = response;
-        console.log("Logging from User form",response)
-       })       
-    }
+  ngOnInit(): void {
+    this.dataService.getGitUsers();
+    this.subscription = this.dataService.getUsers()
+      .subscribe((response:any) =>{
+        this.users = response;
+      })   
   }
 
-  ngOnInit(): void {
-    this.dataService.getGitUsers()
-      .subscribe((response: any) => {
-        this.users = response
-      })
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 
 }

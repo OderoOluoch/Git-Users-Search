@@ -11,15 +11,9 @@ export class UsersreposComponent implements OnInit {
 
   repos:any = []
 
-  repoSearchResult=[]
 
   constructor(private dataService:DataService) { }
 
-  search(searchTerm:string){
-    if(searchTerm !== ''){
-       this.dataService.searchForARepo(searchTerm)     
-    }
-  }
 
   ngOnInit(): void {
     this.dataService.getUsersRepos();

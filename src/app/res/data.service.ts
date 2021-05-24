@@ -12,6 +12,7 @@ export class DataService {
   respos = new BehaviorSubject<any>([])
   constructor(private http: HttpClient) {}
 
+  //My profile End Points
   getMyUserDetails() {
     return this.http.get(`https://api.github.com/users/OderoOluoch`);
   }
@@ -20,10 +21,37 @@ export class DataService {
     return this.http.get(`https://api.github.com/users/OderoOluoch/repos`);
   }
 
+
+
+  //User End Points 
+  users = new BehaviorSubject<any>([])
   getGitUsers() {
-    return this.http.get(`https://api.github.com/users`);
+    return this.http.get(`https://api.github.com/users`)
+      .subscribe((response:any)=>{
+        this.users.next(response.data)
+      })
+    ;
   }
 
+  searchForAUser(userName:string){
+    return this.http.get(
+      `https://api.github.com/search/users?q=${userName}`
+    ).subscribe((response:any)=>{
+      this.users.next(response.data)
+    });
+  }
+
+  getUsers(){
+    return this.respos.asObservable()
+  }
+
+
+
+
+
+
+
+  //Repo End Points
   getUsersRepos(){
     return this.http.get(
       `https://api.github.com/search/repositories?q={query}`
@@ -42,12 +70,8 @@ export class DataService {
 
   getRepos(){
     return this.respos.asObservable();
-  }
+  };
 
-  searchForAUser(userName:string){
-    return this.http.get(
-      `https://api.github.com/search/users?q=${userName}`
-    );
-  }
+  
 
 }
