@@ -14,9 +14,12 @@ export class DataService {
     return this.http.get(`https://api.github.com/users/OderoOluoch`)
   }
 
-
   getMyRepos(){
     return this.http.get(`https://api.github.com/users/OderoOluoch/repos`)
+  }
+
+  getGitUsers(){
+    return this.http.get(`https://api.github.com/users`)
   }
 
   getRepos(repoName:string){

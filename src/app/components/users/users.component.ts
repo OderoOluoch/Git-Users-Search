@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/res/data.service';
+
 
 @Component({
   selector: 'app-users',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
 
-  constructor() { }
+  users:any = []
+
+  constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.getGitUsers()
+      .subscribe((response: any) => {
+        this.users = response
+        console.log(response)
+      })
   }
 
 }
