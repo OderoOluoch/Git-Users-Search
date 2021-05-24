@@ -7,8 +7,11 @@
 <app-search-users></app-search-users>
 <br />
 <br />
-<div>
-    <h1>List of Git hub Users</h1>
+<div class="user-List">
+    <h1>Git hub Users</h1>
+    <p class="text-center">
+        We have a pre defined list, you can view before you make your search
+    </p>
     <ul>
         <li *ngFor="let user of users">{{user.login}}</li>
     </ul>
