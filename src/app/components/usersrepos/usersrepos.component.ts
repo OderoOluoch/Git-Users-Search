@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/res/data.service';
 
@@ -16,19 +17,16 @@ export class UsersreposComponent implements OnInit {
 
   search(searchTerm:string){
     if(searchTerm !== ''){
-       this.dataService.searchForARepo(searchTerm)
-        .subscribe((response:any)=>{
-        this.repoSearchResult= response;
-        console.log("Fetched Repo search result", this.repoSearchResult)
-       })       
+       this.dataService.searchForARepo(searchTerm)     
     }
   }
 
   ngOnInit(): void {
+    this.dataService.getUsersRepos();
     this.dataService.getRepos()
-    .subscribe((response: any) => {
-      this.repos = response.items
-    })
+      .subscribe((response: any)=>{
+        this.repos = response
+      })
   }
 
 }
