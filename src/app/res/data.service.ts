@@ -28,7 +28,7 @@ export class DataService {
   getGitUsers() {
     return this.http.get(`https://api.github.com/users`)
       .subscribe((response:any)=>{
-        this.users.next(response.data)
+        this.users.next(response)
       })
     ;
   }
@@ -37,12 +37,13 @@ export class DataService {
     return this.http.get(
       `https://api.github.com/search/users?q=${userName}`
     ).subscribe((response:any)=>{
-      this.users.next(response.data)
+      this.users.next(response.items)
+      console.log("From searching", response)
     });
   }
 
   getUsers(){
-    return this.respos.asObservable()
+    return this.users.asObservable()
   }
 
 
@@ -64,7 +65,7 @@ export class DataService {
     return this.http.get(
       `https://api.github.com/search/repositories?q={${repoName}}`
     ).subscribe( (response:any) => {
-      this.respos.next(response.data)
+      this.respos.next(response.items)
     });
   }
 

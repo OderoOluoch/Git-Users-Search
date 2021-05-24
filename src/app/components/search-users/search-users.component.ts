@@ -13,7 +13,7 @@ export class SearchUsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  search(searchTerm:string){
+  searchUser(searchTerm:string){
     if(searchTerm !== ''){
        this.dataService.searchForAUser(searchTerm);
     }

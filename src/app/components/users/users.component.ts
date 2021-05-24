@@ -16,7 +16,6 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   constructor(private dataService:DataService) { }
 
-
   ngOnInit(): void {
     this.dataService.getGitUsers();
     this.subscription = this.dataService.getUsers()
