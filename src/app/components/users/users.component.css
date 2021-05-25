@@ -33,7 +33,6 @@
 
 .profile img {
     top:-60;
-    /* position: absolute ; */
     left:calc(50% -90%);
     border:10px solid white;
 }
