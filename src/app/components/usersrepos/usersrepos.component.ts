@@ -20,6 +20,7 @@ export class UsersreposComponent implements OnInit {
     this.dataService.getRepos()
       .subscribe((response: any)=>{
         this.repos = response
+        console.log("Hapa TS",response)
       })
   }
 

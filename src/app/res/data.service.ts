@@ -38,7 +38,6 @@ export class DataService {
       `https://api.github.com/search/users?q=${userName}`
     ).subscribe((response:any)=>{
       this.users.next(response.items)
-      console.log("From searching", response)
     });
   }
 
@@ -58,7 +57,6 @@ export class DataService {
     return this.http.get(
       `https://api.github.com/search/repositories?q={query}`
     ).subscribe((response:any) =>{
-      console.log("FRom Get Users REpo", response.items)
       this.respos.next(response.items);
     });
   }
