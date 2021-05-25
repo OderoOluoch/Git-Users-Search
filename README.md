@@ -7,14 +7,14 @@
 Landing Page
 
 
-![Landing Page](./src/assets/images/LandingTwo.ong)
+![Landing Page](./src/assets/images/LandingTwo.png)
 List of my Repos
 
 
-![Landing Page](./src/assets/images/LandingThree.png)
+![Landing Page](./src/assets/images/LandinThree.png)
 Search Repos
 
-![Landing Page](./src/assets/images/LandingFour)
+![Landing Page](./src/assets/images/LandingFour.png)
 Search Users
 
 
