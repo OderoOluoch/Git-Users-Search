@@ -46,17 +46,13 @@ export class DataService {
    //Getting my Repo Using Promise
    myRepoRequest(){
     interface ApiResponse{
-      imageUrl:string,
       name:string,
-      followers:string,
-      publicRepo:string,
-      following:string,
-      bio:string,
-      company:string,
-      twitterUserName:string 
+        createdAt:Date,
+        description:string,
+        defaultBranch:string, 
     }let promise = new Promise((resolve,reject)=>{
       this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
-        this.userPromise = response
+        this.myRepoPromise = response
         resolve(response)
       },
       error => {
@@ -65,12 +61,6 @@ export class DataService {
     })
     return promise;
   }
-
-
-
-
-
-
 
 
 
