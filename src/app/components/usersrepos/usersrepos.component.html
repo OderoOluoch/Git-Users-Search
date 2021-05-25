@@ -1,21 +1,24 @@
 <br />
-<!-- <form class="form-inline">
-    <h1>Search for a specific Repo by Repo name</h1>
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <br />
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-</form> -->
+<br />
 
-<!-- <div class="search">
-    <h4>Search for a specific Repo by Repo name  yeah</h4>
-    <input type="text" placeholder="Search for GIFS" #repo (keyup.enter)="search(repo.value)">
-</div> -->
 
-<app-search-repos></app-search-repos>
+
 
 <h1>List of top ten repos on GIt HUb</h1>
-<div>
-    <ol>
-        <li *ngFor="let repo of repos">{{repo.name}}</li>
-    </ol>
+<br />
+<br />
+
+<app-search-repos></app-search-repos>
+<br />
+<br />
+<div *ngFor="let repo of repos" class="card">
+    <div class="card-header">
+      Featured
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{repo.name}}</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
 </div>
+<br />
