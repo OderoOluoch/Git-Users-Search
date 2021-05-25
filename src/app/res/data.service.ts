@@ -70,7 +70,7 @@ export class DataService {
   }
 
   getMyRepos() {
-    return this.http.get(`https://api.github.com/users/OderoOluoch/repos`);
+    return this.http.get(environment.reposUrl);
   }
 
 
@@ -87,7 +87,7 @@ export class DataService {
 
   searchForAUser(userName:string){
     return this.http.get(
-      `https://api.github.com/search/users?q=${userName}`
+      `${environment.searchForUserUrl}?q=${userName}`
     ).subscribe((response:any)=>{
       this.users.next(response.items)
     });
@@ -107,7 +107,7 @@ export class DataService {
   respos = new BehaviorSubject<any>([])
   getUsersRepos(){
     return this.http.get(
-      `https://api.github.com/search/repositories?q={query}`
+      `${environment.searchForRepoUrl}?q={query}`
     ).subscribe((response:any) =>{
       this.respos.next(response.items);
     });
@@ -115,7 +115,7 @@ export class DataService {
 
   searchForARepo(repoName:string){
     return this.http.get(
-      `https://api.github.com/search/repositories?q={${repoName}}`
+      `${environment.searchForRepoUrl}?q={${repoName}}`
     ).subscribe( (response:any) => {
       this.respos.next(response.items)
     });
