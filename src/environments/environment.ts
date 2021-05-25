@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiKey:'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',
+  apiUrl:'https://api.github.com/users/OderoOluoch'
 };
 
 /*

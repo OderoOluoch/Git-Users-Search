@@ -14,6 +14,9 @@ export class ProfileComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit(): void {
+    this.dataService.userRequest()
+    this.profile = this.dataService.userPromise
+
     this.dataService.getMyUserDetails()
       .subscribe((response: any) => {
         this.profile = response

@@ -3,14 +3,51 @@ import { HttpClient } from '@angular/common/http';
 
 import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
+import { User } from '../class/user';
 
 @Injectable({
   providedIn: 'root',
 })
 
 export class DataService {
+
+  userPromise:User;
   
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.userPromise = new User("","","","","","","","")
+  }
+
+  //Getting user using Using Promise
+  userRequest(){
+    interface ApiResponse{
+      imageUrl:string,
+      name:string,
+      followers:string,
+      publicRepo:string,
+      following:string,
+      bio:string,
+      company:string,
+      twitterUserName:string 
+    }let promise = new Promise((resolve,reject)=>{
+      this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+        this.userPromise = response
+        resolve(response)
+      },
+      error => {
+        
+        reject(error)
+      })
+    })
+    return promise;
+  }
+
+
+
+
+
+
+
+
 
   //My profile End Points
   getMyUserDetails() {

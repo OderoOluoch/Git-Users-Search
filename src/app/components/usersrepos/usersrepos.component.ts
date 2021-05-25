@@ -26,7 +26,6 @@ export class UsersreposComponent implements OnInit {
 	}
   public ngDoCheck() : void {
  
-		console.log( "ngDoCheck() - Change detection triggered." );
  
 	}
   public showMessage() {
@@ -41,7 +40,7 @@ export class UsersreposComponent implements OnInit {
     this.dataService.getRepos()
       .subscribe((response: any)=>{
         this.repos = response
-        console.log("Hapa TS",response)
+
       })
   }
 

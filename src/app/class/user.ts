@@ -8,5 +8,8 @@ export class User {
         bio:string,
         company:string,
         twitterUserName:string    
-    ){}
+    ){
+        
+
+    }
 }
