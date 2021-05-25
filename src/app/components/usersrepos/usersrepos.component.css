@@ -1,4 +1,4 @@
-.repo-list h1{
+h1{
     text-align: center;
     font-weight: bold;
     color: #ff9800;
@@ -6,7 +6,7 @@
     text-transform: uppercase;
 }
 
-.repo-list h1::after {
+h1::after {
     content: '';
     background: #ff9800;
     display: block;

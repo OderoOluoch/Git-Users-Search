@@ -1,3 +1,12 @@
 export class User {
-    constructor(){}
+    constructor(
+        imageUrl:string,
+        name:string,
+        followers:string,
+        publicRepo:string,
+        following:string,
+        bio:string,
+        company:string,
+        twitterUserName:string    
+    ){}
 }
