@@ -14,6 +14,7 @@ import { SearchUsersComponent } from './components/search-users/search-users.com
 import { SearchReposComponent } from './components/search-repos/search-repos.component';
 import { FormatterPipe } from './res/formatter.pipe';
 import { HesitateDirective } from './directives/hesitation.directive';
+import { DateCountPipe } from './pipes/date-count.pipe';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HesitateDirective } from './directives/hesitation.directive';
     SearchReposComponent,
     FormatterPipe,
     HesitateDirective,
+    DateCountPipe,
    
   ],
   imports: [
