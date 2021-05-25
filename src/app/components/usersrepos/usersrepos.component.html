@@ -1,10 +1,7 @@
-
 <br />
 <br />
 
-<div >
-
-  
+<div>
   <h1>Git hub Repos</h1>
   <p class="text-center">
     We have a list that you can view before you make your search
@@ -12,70 +9,64 @@
   <app-search-repos></app-search-repos>
   <br />
   <br />
-  <button class="btn btn-warning"
-  (hesitate)="showMessage()"
-  [duration]="1000"
-  (click)="hideMessage()"
->
-  Hover for a while to view repo details. Click to hide the details
-</button>
-<br />
+  <button
+    class="btn btn-warning"
+    (hesitate)="showMessage()"
+    [duration]="1000"
+    (click)="hideMessage()"
+  >
+    Hover for a while to view repo details. Click to hide the details
+  </button>
+  <br />
 
-  <div  *ngIf="!repos || !repos.length" class="warn btn btn-danger">
-  <h1>No Repository to show</h1>
+  <div *ngIf="!repos || !repos.length" class="warn btn btn-danger">
+    <h1>No Repository to show</h1>
   </div>
 
-
-
-  <div *ngFor="let repo of repos" >
-    <!-- <div class="card-header">
-      Featured
-    </div> -->
+  <div *ngFor="let repo of repos">
     <div class="card mt-5 border-5 pt-2 active pb-0 px-3">
-      <div class="card-body ">
-          <div class="row">
-              <div class="col-12 ">
-                  <h4 class="card-title "><b>Repo Name: {{ repo.name | formatter }}</b></h4>
-              </div>
-              <div class="col">
-                  <h6 class="card-subtitle mb-2 text-muted">
-                      <p class="card-text text-muted small "> 
-                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" 
-                          class="mr-1 " width="19" height="19" id="star"> <span class="vl mr-2 ml-0"></span> Repo Descipption : <span class="font-weight-bold" > {{ repo.description }}</span> </p>
-                  </h6>
-              </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="card-title">
+              <b>Repo Name: {{ repo.name | formatter }}</b>
+            </h4>
           </div>
-      </div>
-      <div *ngIf="isShowingMessage"  class="card-footer bg-white px-0 ">
-          <div class="row">
-              <div class="col-md-auto ">
-                  <ul class="list-inline">
-                      <li class="list-inline-item"> Language used: {{ repo.language }}</li> <br />
-                      <li class="list-inline-item"> Number of Forks: {{ repo.forks }} </li> <br />
-                      <li class="list-inline-item"> Repo score {{ repo.score }}</li>
-                  </ul>
-              </div>
+          <div class="col">
+            <h6 class="card-subtitle mb-2 text-muted">
+              <p class="card-text text-muted small">
+                <img
+                  src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                  class="mr-1"
+                  width="19"
+                  height="19"
+                  id="star"
+                />
+                <span class="vl mr-2 ml-0"></span> Repo Descipption :
+                <span class="font-weight-bold"> {{ repo.description }}</span>
+              </p>
+            </h6>
           </div>
+        </div>
       </div>
-  </div>
-    <!-- <div class="card-body">
-      <h2 class="card-title">Repo Name: {{ repo.name | formatter }}</h2>
-      <p class="card-text"> Repo description: {{ repo.description }}</p>
-      <div>
-       
-
-        <div *ngIf="isShowingMessage" class="btn btn-success">
-          <span>Language used: {{ repo.language }}</span
-          ><br />
-          <span>Number of Forks: {{ repo.forks }}</span
-          ><br />
-          <span>Repo score {{ repo.score }}</span
-          ><br />
+      <div *ngIf="isShowingMessage" class="card-footer bg-white px-0">
+        <div class="row">
+          <div class="col-md-auto btn btn-warning">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                Language used: {{ repo.language }}
+              </li>
+              |
+              <li class="list-inline-item">
+                Number of Forks: {{ repo.forks }}
+              </li>
+              |
+              <li class="list-inline-item">Repo score {{ repo.score }}</li>
+            </ul>
           </div>
+        </div>
       </div>
-
-     
-    <!-- </div>  -->
+    </div>
   </div>
   <br />
 </div>
