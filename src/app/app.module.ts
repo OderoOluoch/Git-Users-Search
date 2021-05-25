@@ -12,6 +12,8 @@ import { UsersreposComponent } from './components/usersrepos/usersrepos.componen
 import { AboutComponent } from './components/about/about.component';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { SearchReposComponent } from './components/search-repos/search-repos.component';
+import { FormatterPipe } from './res/formatter.pipe';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SearchReposComponent } from './components/search-repos/search-repos.com
     UsersreposComponent,
     AboutComponent,
     SearchUsersComponent,
-    SearchReposComponent
+    SearchReposComponent,
+    FormatterPipe,
+   
   ],
   imports: [
     BrowserModule,
