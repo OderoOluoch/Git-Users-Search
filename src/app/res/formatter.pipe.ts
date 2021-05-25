@@ -5,8 +5,11 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FormatterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any, ...args: any[]){
+    if(value){
+      return value.charAt(0).toUpperCase() + value.slice(1);
+  }
+    return value;
   }
 
 }
