@@ -1,40 +1,27 @@
-<h1>List of My repos</h1>
 
 
-    <li *ngFor="let repo of repos">{{repo.name}}</li>
 
-
-<div class="list-group">
+<div class="list-group repos">
     <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
       <div class="d-flex w-100 justify-content-between">
         <h5 class="mb-1">A list of My public repos</h5>
       </div>
       <p class="mb-1">
-        This displays a list of all my repos that are set to be viewed by the public.
+        This displays a list of all my repos that are set to be viewed by the public.They are arranged alphabetically
       </p>
     </a>
-    <a href="#" class="list-group-item list-group-item-action">
+
+    <a *ngFor="let repo of repos" class="list-group-item list-group-item-action">
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
+        <h5 class="mb-1">{{repo.name | formatter}}</h5>
+        <small class="text-muted">{{repo.created_at}}</small>
       </div>
       <p class="mb-1">
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-        varius blandit.
+        {{repo.description}}
       </p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
+      <small class="text-muted">Default Branch : {{repo.default_branch}}</small>
     </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">
-        Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus
-        varius blandit.
-      </p>
-      <small class="text-muted">Donec id elit non mi porta.</small>
-    </a>
+
   </div>
 <div>
     

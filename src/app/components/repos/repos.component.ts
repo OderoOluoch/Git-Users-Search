@@ -16,6 +16,8 @@ export class ReposComponent implements OnInit {
     this.dataService.getMyRepos()
       .subscribe((response: any) => {
         this.repos = response
+
+        console.log("Repos", this.repos)
       })
   }
   
