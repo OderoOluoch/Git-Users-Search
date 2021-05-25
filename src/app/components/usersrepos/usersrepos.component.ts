@@ -9,10 +9,31 @@ import { DataService } from 'src/app/res/data.service';
 })
 export class UsersreposComponent implements OnInit {
 
+  public isShowingMessage: boolean;
+ 
+
   repos:any = []
 
 
-  constructor(private dataService:DataService) { }
+  constructor(private dataService:DataService) {
+    this.isShowingMessage = false;
+   }
+
+   public hideMessage() : void {
+ 
+		this.isShowingMessage = false;
+ 
+	}
+  public ngDoCheck() : void {
+ 
+		console.log( "ngDoCheck() - Change detection triggered." );
+ 
+	}
+  public showMessage() {
+ 
+		this.isShowingMessage = true;
+ 
+	}
 
 
   ngOnInit(): void {

@@ -85,3 +85,7 @@ blockquote::before {
     cursor: pointer;
     transition: 0.5s;
 }
+
+.warn{
+    margin-left: 250px;
+}

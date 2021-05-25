@@ -1,36 +1,55 @@
 <br />
 <br />
 
-
-
-
 <h1>List of top ten repos on GIt HUb</h1>
 <br />
 <br />
 
 <div class="repo-list">
   <h1>Git hub Repos</h1>
-    <p class="text-center">
-        We have a list that you can view before you make your search
-    </p>
-    <app-search-repos></app-search-repos>
+  <p class="text-center">
+    We have a list that you can view before you make your search
+  </p>
+  <app-search-repos></app-search-repos>
+  <br />
+  <br />
+  <button class="btn btn-warning"
+  (hesitate)="showMessage()"
+  [duration]="1000"
+  (click)="hideMessage()"
+>
+  Hover for a while to view repo details. Click to hide the details
+</button>
 <br />
-<br />
-<div *ngFor="let repo of repos" class="card">
+
+  <div  *ngIf="!repos || !repos.length" class="warn btn btn-danger">
+  <h1>No Repository to show</h1>
+  </div>
+
+
+
+  <div *ngFor="let repo of repos" class="card">
     <!-- <div class="card-header">
       Featured
     </div> -->
     <div class="card-body">
-      <h3 class="card-title">{{repo.name | formatter}}</h3>
-      <p class="card-text">{{repo.description}}</p>
-      <span>Language used: {{repo.language}}</span><br />
-      <span>Number of Forks: {{repo.forks}}</span><br />
-      <span>Repo score {{repo.score}}</span><br />
+      <h3 class="card-title">{{ repo.name | formatter }}</h3>
+      <p class="card-text">{{ repo.description }}</p>
+      <div>
+       
+
+        <div *ngIf="isShowingMessage" class="btn btn-success">
+          <span>Language used: {{ repo.language }}</span
+          ><br />
+          <span>Number of Forks: {{ repo.forks }}</span
+          ><br />
+          <span>Repo score {{ repo.score }}</span
+          ><br />
+          </div>
+      </div>
+
       <!-- <span>{{}}</span> -->
     </div>
+  </div>
+  <br />
 </div>
-<br />
-
-
-</div>
-

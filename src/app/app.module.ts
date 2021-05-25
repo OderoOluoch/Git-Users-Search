@@ -13,6 +13,7 @@ import { AboutComponent } from './components/about/about.component';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { SearchReposComponent } from './components/search-repos/search-repos.component';
 import { FormatterPipe } from './res/formatter.pipe';
+import { HesitateDirective } from './directives/hesitation.directive';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { FormatterPipe } from './res/formatter.pipe';
     SearchUsersComponent,
     SearchReposComponent,
     FormatterPipe,
+    HesitateDirective,
    
   ],
   imports: [

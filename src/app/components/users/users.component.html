@@ -15,6 +15,10 @@
 <br />
     <app-search-users></app-search-users>
     <br />
+
+    <div  *ngIf="!users || !users.length" class="warn btn btn-danger">
+        <h1>No Repository to show</h1>
+        </div>
 <br />
     <div  class="row">
         <div *ngFor="let user of users" class="col-md-4 text-center">
