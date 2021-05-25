@@ -1,22 +1,22 @@
-<h1>My personal Profile</h1>
-<div class="media">
-    <img class="mr-3" [src]="profile.avatar_url" alt="Generic placeholder image">
-    <div class="media-body">
-      <h5 class="mt-0">Media heading</h5>
-      <!-- <p>{{ profile.html_url}}</p>
-      <p>{{ profile.followers_url}}</p>
-      <p>{{ profile.following_url}}</p>
-      <p>{{ profile.repos_url}}</p> -->
-      <p>{{ profile.name}}</p>
-      <p>{{ profile.company}}</p>
-      <p>{{ profile.blog}}</p>
-      <p>{{ profile.bio}}</p>
-      <p>{{ profile.twitter_username}}</p>
-      <p>{{ profile.public_repos}}</p>
-      <p>{{ profile.followers}}</p>
-      <p>{{ profile.following}}</p>
-    
-    </div>
+<div class="card p-3">
+  <div class="d-flex align-items-center mt-10">
+      <div class="image"> <img [src]="profile.avatar_url" class="rounded" width="155"> </div>
+      <div class="ml-3 w-100">
+          <h4 class="mb-0 mt-0">{{ profile.name}}</h4> 
+          <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats">
+              <div class="d-flex flex-column"> <span class="articles">Git Hub followers </span> <span class="number1"><p>{{ profile.followers}}</p></span> </div>
+              <div class="d-flex flex-column"> <span class="followers">Public Repos</span> <span class="number2">{{ profile.public_repos}}</span> </div>
+              <div class="d-flex flex-column"> <span class="rating">Git Hub following</span> <span class="number3">{{ profile.following}}</span> </div>
+          </div>
+          <div class="button mt-2 d-flex flex-row align-items-center"> <button class="btn btn-sm btn-outline-primary w-100">Chat</button> <button class="btn btn-sm btn-primary w-100 ml-2">Follow</button> </div>
+      </div>
+  </div>
+  <p>{{ profile.bio}}</p>
+  <p>{{ profile.company}}</p>
+  <p>{{ profile.twitter_username}}</p>
+ 
+  
+  
 </div>
 
 <app-repos></app-repos>
