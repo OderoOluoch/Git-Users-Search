@@ -33,8 +33,8 @@
 
 .profile img {
     top:-60;
-    position: absolute ;
-    left:calc(50% -60%);
+    /* position: absolute ; */
+    left:calc(50% -90%);
     border:10px solid white;
 }
 .user{
@@ -59,33 +59,10 @@ blockquote{
     line-height: 30px;
 }
 
-blockquote::before {
-    content: '\93';
-    font-size: 50px;
-    position: relative;
-    color: #ff9800;
-    line-height: 20px;
-    bottom: -15px;
-    right: 5px;
-}
 
-
-blockquote::before {
-    content: '\94';
-    font-size: 50px;
-    position: relative;
-    color: #ff9800;
-    line-height: 10px;
-    bottom: -15px;
-    left: 5px;
-}
 
 .profile:hover{
     box-shadow: 0 0 15px rga(0,0,0,0.2);
     cursor: pointer;
     transition: 0.5s;
-}
-
-.warn{
-    margin-left: 250px;
 }

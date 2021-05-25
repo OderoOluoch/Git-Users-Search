@@ -17,13 +17,13 @@
     <br />
 
     <div  *ngIf="!users || !users.length" class="warn btn btn-danger">
-        <h1>No Repository to show</h1>
+        <h1>No User  to show</h1>
         </div>
 <br />
-    <div  class="row">
+    <div class="row">
         <div *ngFor="let user of users" class="col-md-4 text-center">
             <div class="profile">
-                <img [src]="user.avatar_url" alt="">
+                <img [src]="user.avatar_url" class="user" alt="">
                 <blockquote>
                     THis will be replaced with something very very soon, you think am JOking?
                 </blockquote>
