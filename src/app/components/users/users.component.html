@@ -1,0 +1,34 @@
+
+<!-- <div class="search">
+    <h4>Search for a specific Repo by Repo name  yeah</h4>
+    <input type="text" placeholder="Search for GIFS" #user (keyup.enter)="search(user.value)">
+</div> -->
+
+<br />
+<br />
+<div class="user-List">
+    <h1>Git hub Users</h1>
+    <p class="text-center">
+        We have a pre defined list, you can view before you make your search
+    </p>
+    <br />
+<br />
+    <app-search-users></app-search-users>
+    <br />
+
+    <div  *ngIf="!users || !users.length" class="warn btn btn-danger">
+        <h1>No User  to show</h1>
+        </div>
+<br />
+    <div class="row">
+        <div *ngFor="let user of users" class="col-md-4 text-center">
+            <div class="profile">
+                <img [src]="user.avatar_url" class="user" alt="">
+                <blockquote>
+                    
+                </blockquote>
+                Git Hub Username :<h3> {{user.login|formatter}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

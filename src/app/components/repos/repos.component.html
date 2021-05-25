@@ -1,0 +1,28 @@
+
+
+
+<div class="list-group repos">
+    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">A list of My public repos</h5>
+      </div>
+      <p class="mb-1">
+        This displays a list of all my repos that are set to be viewed by the public.They are arranged alphabetically
+      </p>
+    </a>
+
+    <a *ngFor="let repo of repos" class="list-group-item list-group-item-action">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{repo.name | formatter}}</h5>
+        <small class="text-muted">{{repo.created_at |date}}</small>
+      </div>
+      <p class="mb-1">
+        {{repo.description}}
+      </p>
+      <small class="text-muted">Default Branch : {{repo.default_branch}}</small>
+    </a>
+
+  </div>
+<div>
+    
+    

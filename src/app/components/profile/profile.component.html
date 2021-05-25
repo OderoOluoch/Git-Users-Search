@@ -1,0 +1,22 @@
+<div class="card p-3 me">
+  <div class="d-flex align-items-center ">
+      <div class="image"> <img [src]="profile.avatar_url"  width="155"> </div>
+      <div class="ml-3 w-100">
+          <h4 class="mb-0 mt-0 name">{{ profile.name}}</h4> 
+          <div class="p-2 mt-2 bg-primary d-flex justify-content-between rounded text-white stats ala">
+              <div class="d-flex flex-column"> <span class="articles">Git Hub followers </span> <span class="number1"><p>{{ profile.followers}}</p></span> </div>
+              <div class="d-flex flex-column"> <span class="followers">Public Repos</span> <span class="number2">{{ profile.public_repos}}</span> </div>
+              <div class="d-flex flex-column"> <span class="rating">Git Hub following</span> <span class="number3">{{ profile.following}}</span> </div>
+          </div>
+      </div>
+  </div>
+  <div class="zangu">
+  <strong> <p>Bio:</p></strong>  
+    <p>{{ profile.bio}}</p>
+    <p> Founder, {{ profile.company}}</p>
+    <p>Twitter Name, {{ profile.twitter_username}}</p> 
+  </div>
+  
+</div>
+
+<app-repos></app-repos>
