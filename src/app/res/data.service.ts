@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { BehaviorSubject } from 'rxjs';
 import { User } from '../class/user';
+import { Repository } from '../class/repository';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,11 @@ import { User } from '../class/user';
 export class DataService {
 
   userPromise:User;
+  myRepoPromise:Repository
   
   constructor(private http: HttpClient) {
     this.userPromise = new User("","","","","","","","")
+    this.myRepoPromise = new Repository("", new Date(),"","")
   }
 
   //Getting user using Using Promise
@@ -34,7 +37,29 @@ export class DataService {
         resolve(response)
       },
       error => {
-        
+        reject(error)
+      })
+    })
+    return promise;
+  }
+
+   //Getting my Repo Using Promise
+   myRepoRequest(){
+    interface ApiResponse{
+      imageUrl:string,
+      name:string,
+      followers:string,
+      publicRepo:string,
+      following:string,
+      bio:string,
+      company:string,
+      twitterUserName:string 
+    }let promise = new Promise((resolve,reject)=>{
+      this.http.get<ApiResponse>(environment.apiUrl).toPromise().then(response=>{
+        this.userPromise = response
+        resolve(response)
+      },
+      error => {
         reject(error)
       })
     })
@@ -51,7 +76,7 @@ export class DataService {
 
   //My profile End Points
   getMyUserDetails() {
-    return this.http.get(`https://api.github.com/users/OderoOluoch`);
+    return this.http.get(environment.apiUrl);
   }
 
   getMyRepos() {
